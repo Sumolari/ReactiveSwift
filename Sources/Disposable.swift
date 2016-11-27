@@ -20,7 +20,7 @@ public protocol Disposable: class {
 }
 
 /// Represents the state of a disposable.
-private enum DisposableState: Int32 {
+internal enum DisposableState: Int32 {
 	/// The disposable is active.
 	case active
 
@@ -33,7 +33,7 @@ extension UnsafeAtomicState where State == DisposableState {
 	///
 	/// - returns: `true` if the transition succeeds. `false` otherwise.
 	@inline(__always)
-	fileprivate func tryDispose() -> Bool {
+	internal func tryDispose() -> Bool {
 		return tryTransition(from: .active, to: .disposed)
 	}
 }
