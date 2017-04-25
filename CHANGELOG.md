@@ -1,5 +1,7 @@
 # master
 *Please add new entries at the top.*
+1. N-ary `SignalProducer` operators are now generic and accept any type that can be expressed as `SignalProducer`. (#410, kudos to @andersio)
+   Types may conform to `SignalProducerConvertible` to be an eligible operand.
 
 # 1.1.3
 ## Deprecation
